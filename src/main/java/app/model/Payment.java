@@ -13,11 +13,15 @@ import jakarta.persistence.Table;
 import java.math.BigDecimal;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.SQLRestriction;
 
 @Entity
-@Table(name = "payments")
 @Getter
 @Setter
+@Table(name = "payments")
+@SQLDelete(sql = "UPDATE payments SET is_deleted = true WHERE id=?")
+@SQLRestriction("is_deleted = false")
 public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,7 +32,12 @@ public class Payment {
     @OneToOne
     @JoinColumn(name = "booking_id")
     private Booking booking;
+    @Column(nullable = false)
     private String sessionUrl;
+    @Column(nullable = false)
     private long sessionId;
+    @Column(nullable = false)
     private BigDecimal price;
+    @Column(nullable = false)
+    private boolean isDeleted = false;
 }

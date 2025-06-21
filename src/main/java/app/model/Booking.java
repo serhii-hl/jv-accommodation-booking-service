@@ -14,16 +14,22 @@ import jakarta.persistence.Table;
 import java.time.LocalDate;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.SQLRestriction;
 
 @Entity
 @Table(name = "bookings")
 @Getter
 @Setter
+@SQLDelete(sql = "UPDATE bookings SET is_deleted = true WHERE id=?")
+@SQLRestriction("is_deleted = false")
 public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(nullable = false)
     private LocalDate checkInDate;
+    @Column(nullable = false)
     private LocalDate checkOutDate;
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "accommodation_id", nullable = false)
@@ -34,4 +40,6 @@ public class Booking {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private BookingStatus status;
+    @Column(nullable = false)
+    private boolean isDeleted = false;
 }
