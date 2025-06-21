@@ -1,0 +1,12 @@
+app\model\Booking.class
+app\model\Amenity.class
+app\model\Location.class
+app\model\AccommodationType.class
+app\model\AccommodationSize.class
+app\model\Payment.class
+app\model\User.class
+app\model\Accommodation.class
+app\model\BookingStatus.class
+app\model\Role.class
+app\model\PaymentStatus.class
+app\AccommodationBookingApp.class
