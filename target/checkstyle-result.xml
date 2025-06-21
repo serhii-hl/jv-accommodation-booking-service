@@ -24,6 +24,16 @@
 </file>
 <file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\model\User.java">
 </file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\repository\AccommodationRepository.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\repository\BookingRepository.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\repository\LocationRepository.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\repository\PaymentRepository.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\repository\UserRepository.java">
+</file>
 <file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\resources\application.properties">
 </file>
 </checkstyle>

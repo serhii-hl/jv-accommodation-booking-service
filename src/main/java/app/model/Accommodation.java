@@ -1,5 +1,6 @@
 package app.model;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.CollectionTable;
 import jakarta.persistence.Column;
 import jakarta.persistence.ElementCollection;
@@ -16,11 +17,15 @@ import java.math.BigDecimal;
 import java.util.Set;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.SQLRestriction;
 
 @Entity
 @Table(name = "accommodations")
 @Getter
 @Setter
+@SQLDelete(sql = "UPDATE accommodations SET is_deleted = true WHERE id=?")
+@SQLRestriction("is_deleted = false")
 public class Accommodation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,7 +33,7 @@ public class Accommodation {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private AccommodationType type;
-    @OneToOne
+    @OneToOne(mappedBy = "accommodation", cascade = CascadeType.ALL, orphanRemoval = true)
     private Location location;
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
@@ -39,6 +44,10 @@ public class Accommodation {
             joinColumns = @JoinColumn(name = "accommodation_id"))
     @Column(name = "amenity")
     private Set<Amenity> amenitySet;
+    @Column(nullable = false)
     private BigDecimal dailyPrice;
+    @Column(nullable = false)
     private Integer avialability;
+    @Column(nullable = false)
+    private boolean isDeleted = false;
 }
