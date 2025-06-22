@@ -2,6 +2,26 @@
 <checkstyle version="9.3">
 <file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\AccommodationBookingApp.java">
 </file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\config\MapperConfig.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\config\SecurityConfig.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\controller\AuthController.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\dto\CreateUserOwnerRequestDto.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\dto\CreateUserRequestDto.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\dto\UserDto.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\dto\UserLoginRequestDto.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\dto\UserLoginResponseDto.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\exception\RegistrationException.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\mapper\UserMapper.java">
+</file>
 <file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\model\Accommodation.java">
 </file>
 <file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\model\AccommodationSize.java">
@@ -33,6 +53,38 @@
 <file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\repository\PaymentRepository.java">
 </file>
 <file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\repository\UserRepository.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\security\AuthenticationService.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\security\CustomUserDetailsService.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\security\JwtAuthenticationFilter.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\security\JwtUtil.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\service\impl\UserServiceImpl.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\service\UserService.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\validation\user\Email.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\validation\user\EmailValidator.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\validation\user\FieldMatch.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\validation\user\FieldMatchValidator.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\validation\user\Name.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\validation\user\NameValidator.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\validation\user\Password.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\validation\user\PasswordValidator.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\validation\user\Phone.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\validation\user\PhoneValidator.java">
 </file>
 <file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\resources\application.properties">
 </file>
