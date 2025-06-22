@@ -1,0 +1,47 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-location-table
+      author: serhiiHolenkov
+      changes:
+        - createTable:
+            tableName: locations
+            columns:
+              - column:
+                  name: accommodation_id
+                  type: bigint
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: country
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: city
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: street
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: number
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: is_deleted
+                  type: boolean
+                  defaultValueBoolean: false
+                  constraints:
+                    nullable: false
+        - addForeignKeyConstraint:
+            baseColumnNames: accommodation_id
+            baseTableName: locations
+            constraintName: fk_locations_accommodations
+            referencedColumnNames: id
+            referencedTableName: accommodations
+            onDelete: CASCADE
