@@ -1,9 +1,11 @@
 package app.mapper;
 
 import app.config.MapperConfig;
-import app.dto.CreateUserOwnerRequestDto;
-import app.dto.CreateUserRequestDto;
-import app.dto.UserDto;
+import app.dto.user.CreateUserOwnerRequestDto;
+import app.dto.user.CreateUserRequestDto;
+import app.dto.user.OwnerProfileDto;
+import app.dto.user.UserDto;
+import app.dto.user.UserProfileDto;
 import app.model.User;
 import org.mapstruct.Mapper;
 import org.mapstruct.ReportingPolicy;
@@ -16,4 +18,8 @@ public interface UserMapper {
     public User toUser(CreateUserRequestDto createUserRequestDto);
 
     public User toUser(CreateUserOwnerRequestDto userOwnerRequestDto);
+
+    UserProfileDto toUserProfileDto(User user);
+
+    OwnerProfileDto toOwnerProfileDto(User user);
 }

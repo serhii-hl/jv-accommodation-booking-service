@@ -5,7 +5,7 @@ import jakarta.validation.ConstraintValidatorContext;
 import java.util.regex.Pattern;
 
 public class PhoneValidator implements ConstraintValidator<Phone, String> {
-    private static final String PHONE_PATTERN = "^\\+380\\d{9}$";
+    private static final String PHONE_PATTERN = "^\\+\\d{9}$";
 
     @Override
     public boolean isValid(String phone, ConstraintValidatorContext constraintValidatorContext) {
