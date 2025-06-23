@@ -1,10 +1,10 @@
 package app.controller;
 
-import app.dto.CreateUserOwnerRequestDto;
-import app.dto.CreateUserRequestDto;
-import app.dto.UserDto;
-import app.dto.UserLoginRequestDto;
-import app.dto.UserLoginResponseDto;
+import app.dto.user.CreateUserOwnerRequestDto;
+import app.dto.user.CreateUserRequestDto;
+import app.dto.user.UserDto;
+import app.dto.user.UserLoginRequestDto;
+import app.dto.user.UserLoginResponseDto;
 import app.exception.RegistrationException;
 import app.security.AuthenticationService;
 import app.service.UserService;
@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-@Tag(name = "User controller", description = "Endpoints for user management ( CRUD operations )")
+@Tag(name = "Auth controller", description = "Endpoints for authentication and registration")
 @RestController
 @RequestMapping("/auth")
 @RequiredArgsConstructor

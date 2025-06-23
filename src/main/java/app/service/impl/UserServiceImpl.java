@@ -1,14 +1,18 @@
 package app.service.impl;
 
-import app.dto.CreateUserOwnerRequestDto;
-import app.dto.CreateUserRequestDto;
-import app.dto.UserDto;
+import app.dto.user.CreateUserOwnerRequestDto;
+import app.dto.user.CreateUserRequestDto;
+import app.dto.user.ProfileDto;
+import app.dto.user.UpdateProfileInformationDto;
+import app.dto.user.UpdateRoleRequestDto;
+import app.dto.user.UserDto;
 import app.exception.RegistrationException;
 import app.mapper.UserMapper;
 import app.model.Role;
 import app.model.User;
 import app.repository.UserRepository;
 import app.service.UserService;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -45,5 +49,41 @@ public class UserServiceImpl implements UserService {
         user.setPassword(passwordEncoder.encode(userOwnerRequestDto.getPassword()));
         User savedUser = userRepository.save(user);
         return userMapper.toDto(savedUser);
+    }
+
+    @Override
+    public ProfileDto getCurrentUser(User user) {
+        return switch (user.getRole()) {
+            case USER -> userMapper.toUserProfileDto(user);
+            case OWNER, ADMIN -> userMapper.toOwnerProfileDto(user);
+            default -> throw new IllegalStateException("Unexpected value: " + user.getRole());
+        };
+    }
+
+    @Override
+    public void updateUserStatus(Long id, UpdateRoleRequestDto request) {
+        User user = userRepository.findById(id).orElseThrow(
+                () -> new EntityNotFoundException("Can`t find user with id: " + id));
+        user.setRole(request.getRole());
+        user.setDeleted(request.isDeleted());
+        userRepository.save(user);
+    }
+
+    @Override
+    public UserDto updateProfile(User user, UpdateProfileInformationDto dto) {
+        if (dto.getPassword() != null) {
+            user.setPassword(passwordEncoder.encode(dto.getPassword()));
+        }
+        if (dto.getFirstName() != null) {
+            user.setFirstName(dto.getFirstName());
+        }
+        if (dto.getLastName() != null) {
+            user.setLastName(dto.getLastName());
+        }
+        if (dto.getPhoneNumber() != null) {
+            user.setPhoneNumber(dto.getPhoneNumber());
+        }
+
+        return userMapper.toDto(userRepository.save(user));
     }
 }
