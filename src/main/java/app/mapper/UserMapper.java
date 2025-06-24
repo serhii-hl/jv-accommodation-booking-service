@@ -19,7 +19,7 @@ public interface UserMapper {
 
     public User toUser(CreateUserOwnerRequestDto userOwnerRequestDto);
 
-    UserProfileDto toUserProfileDto(User user);
+    public UserProfileDto toUserProfileDto(User user);
 
-    OwnerProfileDto toOwnerProfileDto(User user);
+    public OwnerProfileDto toOwnerProfileDto(User user);
 }
