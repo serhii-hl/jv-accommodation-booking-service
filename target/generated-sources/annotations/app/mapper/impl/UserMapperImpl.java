@@ -1,8 +1,10 @@
 package app.mapper.impl;
 
-import app.dto.CreateUserOwnerRequestDto;
-import app.dto.CreateUserRequestDto;
-import app.dto.UserDto;
+import app.dto.user.CreateUserOwnerRequestDto;
+import app.dto.user.CreateUserRequestDto;
+import app.dto.user.OwnerProfileDto;
+import app.dto.user.UserDto;
+import app.dto.user.UserProfileDto;
 import app.mapper.UserMapper;
 import app.model.User;
 import javax.annotation.processing.Generated;
@@ -10,7 +12,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-06-22T10:37:49+0300",
+    date = "2025-06-24T10:14:17+0300",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 17.0.12 (Oracle Corporation)"
 )
 @Component
@@ -23,6 +25,20 @@ public class UserMapperImpl implements UserMapper {
         }
 
         UserDto userDto = new UserDto();
+
+        userDto.setId( user.getId() );
+        if ( user.getEmail() != null ) {
+            userDto.setEmail( user.getEmail() );
+        }
+        if ( user.getFirstName() != null ) {
+            userDto.setFirstName( user.getFirstName() );
+        }
+        if ( user.getLastName() != null ) {
+            userDto.setLastName( user.getLastName() );
+        }
+        if ( user.getPhoneNumber() != null ) {
+            userDto.setPhoneNumber( user.getPhoneNumber() );
+        }
 
         return userDto;
     }
@@ -82,5 +98,65 @@ public class UserMapperImpl implements UserMapper {
         }
 
         return user;
+    }
+
+    @Override
+    public UserProfileDto toUserProfileDto(User user) {
+        if ( user == null ) {
+            return null;
+        }
+
+        UserProfileDto userProfileDto = new UserProfileDto();
+
+        if ( user.getEmail() != null ) {
+            userProfileDto.setEmail( user.getEmail() );
+        }
+        if ( user.getFirstName() != null ) {
+            userProfileDto.setFirstName( user.getFirstName() );
+        }
+        if ( user.getLastName() != null ) {
+            userProfileDto.setLastName( user.getLastName() );
+        }
+        if ( user.getRole() != null ) {
+            userProfileDto.setRole( user.getRole() );
+        }
+        if ( user.getPhoneNumber() != null ) {
+            userProfileDto.setPhoneNumber( user.getPhoneNumber() );
+        }
+
+        return userProfileDto;
+    }
+
+    @Override
+    public OwnerProfileDto toOwnerProfileDto(User user) {
+        if ( user == null ) {
+            return null;
+        }
+
+        OwnerProfileDto ownerProfileDto = new OwnerProfileDto();
+
+        if ( user.getEmail() != null ) {
+            ownerProfileDto.setEmail( user.getEmail() );
+        }
+        if ( user.getFirstName() != null ) {
+            ownerProfileDto.setFirstName( user.getFirstName() );
+        }
+        if ( user.getLastName() != null ) {
+            ownerProfileDto.setLastName( user.getLastName() );
+        }
+        if ( user.getRole() != null ) {
+            ownerProfileDto.setRole( user.getRole() );
+        }
+        if ( user.getCompanyName() != null ) {
+            ownerProfileDto.setCompanyName( user.getCompanyName() );
+        }
+        if ( user.getTaxNumber() != null ) {
+            ownerProfileDto.setTaxNumber( user.getTaxNumber() );
+        }
+        if ( user.getPhoneNumber() != null ) {
+            ownerProfileDto.setPhoneNumber( user.getPhoneNumber() );
+        }
+
+        return ownerProfileDto;
     }
 }

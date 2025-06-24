@@ -13,9 +13,12 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 import lombok.Getter;
 import lombok.Setter;
@@ -35,6 +38,8 @@ public class Accommodation {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private AccommodationType type;
+    @OneToMany(mappedBy = "accommodation", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<AccommodationPhoto> photos = new ArrayList<>();
     @OneToOne(mappedBy = "accommodation", cascade = CascadeType.ALL, orphanRemoval = true)
     private Location location;
     @Enumerated(EnumType.STRING)
@@ -49,7 +54,8 @@ public class Accommodation {
     @Column(nullable = false)
     private BigDecimal dailyPrice;
     @Column(nullable = false)
-    private Integer avialability;
+    @OneToMany(mappedBy = "accommodation", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<AccommodationUnit> units;
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "owner_id", nullable = false)
     private User owner;

@@ -35,6 +35,9 @@ public class Booking {
     @JoinColumn(name = "accommodation_id", nullable = false)
     private Accommodation accommodation;
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "unit_id", nullable = false)
+    private AccommodationUnit unit;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
     @Enumerated(EnumType.STRING)

@@ -1,10 +1,10 @@
 databaseChangeLog:
   - changeSet:
-      id: create-accommodation-table
+      id: create-user-table
       author: serhiiHolenkov
       changes:
         - createTable:
-            tableName: accommodations
+            tableName: users
             columns:
               - column:
                   name: id
@@ -14,23 +14,29 @@ databaseChangeLog:
                     primaryKey: true
                     nullable: false
               - column:
-                  name: type
+                  name: email
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: first_name
                   type: varchar(255)
                   constraints:
                     nullable: false
               - column:
-                  name: size
+                  name: last_name
                   type: varchar(255)
                   constraints:
                     nullable: false
               - column:
-                  name: daily_price
-                  type: DECIMAL(8, 2)
+                  name: password
+                  type: varchar(255)
                   constraints:
                     nullable: false
               - column:
-                  name: avialability
-                  type: int
+                  name: role
+                  type: varchar(255)
                   constraints:
                     nullable: false
               - column:
@@ -39,3 +45,18 @@ databaseChangeLog:
                   defaultValueBoolean: false
                   constraints:
                     nullable: false
+              - column:
+                  name: tax_number
+                  type: varchar(255)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: company_name
+                  type: varchar(255)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: phone_number
+                  type: varchar(255)
+                  constraints:
+                    nullable: true

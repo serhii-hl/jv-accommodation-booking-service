@@ -1,10 +1,10 @@
 databaseChangeLog:
   - changeSet:
-      id: create-user-table
+      id: create-accommodation-table-initial
       author: serhiiHolenkov
       changes:
         - createTable:
-            tableName: users
+            tableName: accommodations
             columns:
               - column:
                   name: id
@@ -14,29 +14,18 @@ databaseChangeLog:
                     primaryKey: true
                     nullable: false
               - column:
-                  name: email
-                  type: varchar(255)
-                  constraints:
-                    nullable: false
-                    unique: true
-              - column:
-                  name: first_name
+                  name: type
                   type: varchar(255)
                   constraints:
                     nullable: false
               - column:
-                  name: last_name
+                  name: size
                   type: varchar(255)
                   constraints:
                     nullable: false
               - column:
-                  name: password
-                  type: varchar(255)
-                  constraints:
-                    nullable: false
-              - column:
-                  name: role
-                  type: varchar(255)
+                  name: daily_price
+                  type: DECIMAL(8, 2)
                   constraints:
                     nullable: false
               - column:
@@ -45,3 +34,14 @@ databaseChangeLog:
                   defaultValueBoolean: false
                   constraints:
                     nullable: false
+              - column:
+                  name: owner_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+        - addForeignKeyConstraint:
+            baseTableName: accommodations
+            baseColumnNames: owner_id
+            referencedTableName: users
+            referencedColumnNames: id
+            constraintName: fk_accommodation_owner

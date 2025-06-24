@@ -1,0 +1,37 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-accommodation-units-table
+      author: serhiiHolenkov
+      changes:
+        - createTable:
+            tableName: accommodation_units
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: accommodation_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: unit_number
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: is_active
+                  type: BOOLEAN
+                  constraints:
+                    nullable: false
+        - addForeignKeyConstraint:
+            baseTableName: accommodation_units
+            baseColumnNames: accommodation_id
+            referencedTableName: accommodations
+            referencedColumnNames: id
+            constraintName: fk_accommodation_units_accommodations
+            onDelete: CASCADE
