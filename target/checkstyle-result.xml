@@ -10,6 +10,8 @@
 </file>
 <file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\controller\AuthController.java">
 </file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\controller\BookingController.java">
+</file>
 <file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\controller\UserController.java">
 </file>
 <file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\dto\accommodation\AccommodationDto.java">
@@ -19,6 +21,10 @@
 <file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\dto\accommodation\CreateAccommodationUnitDto.java">
 </file>
 <file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\dto\accommodation\UpdateAccommodationDto.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\dto\booking\BookingDto.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\dto\booking\CreateBookingDto.java">
 </file>
 <file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\dto\location\LocationDto.java">
 </file>
@@ -42,11 +48,15 @@
 </file>
 <file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\dto\user\UserProfileDto.java">
 </file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\exception\BookingUnavailableException.java">
+</file>
 <file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\exception\RegistrationException.java">
 </file>
 <file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\mapper\AccommodationMapper.java">
 </file>
 <file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\mapper\AccommodationUnitMapper.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\mapper\BookingMapper.java">
 </file>
 <file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\mapper\LocationMapper.java">
 </file>
@@ -82,6 +92,8 @@
 </file>
 <file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\repository\AccommodationRepository.java">
 </file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\repository\AccommodationUnitRepository.java">
+</file>
 <file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\repository\BookingRepository.java">
 </file>
 <file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\repository\LocationRepository.java">
@@ -104,11 +116,15 @@
 </file>
 <file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\service\AccommodationUnitService.java">
 </file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\service\BookingService.java">
+</file>
 <file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\service\impl\AccommodationPhotoServiceImpl.java">
 </file>
 <file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\service\impl\AccommodationServiceImpl.java">
 </file>
 <file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\service\impl\AccommodationUnitServiceImpl.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\service\impl\BookingServiceImpl.java">
 </file>
 <file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\service\impl\LocationServiceImpl.java">
 </file>
@@ -117,6 +133,12 @@
 <file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\service\LocationService.java">
 </file>
 <file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\service\UserService.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\specification\BookingSpecification.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\validation\user\CheckInAndOutDate.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\validation\user\CheckInAndOutDateValidator.java">
 </file>
 <file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\validation\user\Email.java">
 </file>

@@ -46,6 +46,9 @@ public class AccommodationServiceImpl implements AccommodationService {
 
     @Override
     public void deleteAccommodationById(Long id) {
+        if (!accommodationRepository.existsById(id)) {
+            throw new EntityNotFoundException("Accommodation with id: " + id + " not found.");
+        }
         accommodationRepository.deleteById(id);
     }
 
@@ -95,6 +98,16 @@ public class AccommodationServiceImpl implements AccommodationService {
         accommodation.setUnits(units);
         Accommodation savedAccommodation = accommodationRepository.save(accommodation);
         return accommodationMapper.toDto(savedAccommodation);
+    }
+
+    @Override
+    public Long getOwnerIdForAccommodation(Long accommodationId) {
+        Long ownerId = accommodationRepository.getOwnerIdByAccommodationId(accommodationId);
+        if (ownerId == null) {
+            throw new EntityNotFoundException(
+                    "Accommodation with id: " + accommodationId + " not found or has no owner");
+        }
+        return ownerId;
     }
 
 }

@@ -18,4 +18,6 @@ public interface AccommodationService {
                                              UpdateAccommodationDto updateAccommodationDto);
 
     AccommodationDto createAccommodation(CreateAccommodationDto createAccommodationDto, User user);
+
+    Long getOwnerIdForAccommodation(Long accommodationId);
 }

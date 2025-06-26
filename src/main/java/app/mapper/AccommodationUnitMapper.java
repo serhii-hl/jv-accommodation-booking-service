@@ -10,5 +10,5 @@ import org.mapstruct.ReportingPolicy;
         unmappedTargetPolicy = ReportingPolicy.IGNORE)
 public interface AccommodationUnitMapper {
 
-    public AccommodationUnit toUnit(CreateAccommodationUnitDto createAccommodationUnitDto);
+    AccommodationUnit toUnit(CreateAccommodationUnitDto createAccommodationUnitDto);
 }

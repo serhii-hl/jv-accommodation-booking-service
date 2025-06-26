@@ -13,13 +13,13 @@ import org.mapstruct.ReportingPolicy;
 @Mapper(config = MapperConfig.class,
         unmappedTargetPolicy = ReportingPolicy.IGNORE)
 public interface UserMapper {
-    public UserDto toDto(User user);
+    UserDto toDto(User user);
 
-    public User toUser(CreateUserRequestDto createUserRequestDto);
+    User toUser(CreateUserRequestDto createUserRequestDto);
 
-    public User toUser(CreateUserOwnerRequestDto userOwnerRequestDto);
+    User toUser(CreateUserOwnerRequestDto userOwnerRequestDto);
 
-    public UserProfileDto toUserProfileDto(User user);
+    UserProfileDto toUserProfileDto(User user);
 
-    public OwnerProfileDto toOwnerProfileDto(User user);
+    OwnerProfileDto toOwnerProfileDto(User user);
 }
