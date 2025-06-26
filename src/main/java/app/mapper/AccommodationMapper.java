@@ -19,7 +19,7 @@ public interface AccommodationMapper {
     @Mapping(target = "photoUrls", expression = "java(mapPhotoUrls(accommodation.getPhotos()))")
     @Mapping(target = "availableUnitsCount",
             expression = "java(mapUnitsAvailability(accommodation.getUnits()))")
-    public AccommodationDto toDto(Accommodation accommodation);
+    AccommodationDto toDto(Accommodation accommodation);
 
     default List<String> mapPhotoUrls(List<AccommodationPhoto> photos) {
         if (photos == null) {
@@ -39,5 +39,5 @@ public interface AccommodationMapper {
                 .count();
     }
 
-    public Accommodation toEntity(CreateAccommodationDto dto);
+    Accommodation toEntity(CreateAccommodationDto dto);
 }

@@ -49,13 +49,13 @@ public class AccommController {
         return accommodationService.getAllAccommodations(pageable);
     }
 
-    @GetMapping("{/id}")
+    @GetMapping("/{id}")
     @Operation(summary = "get accommodation", description = "Get accommodation by id")
     public AccommodationDto getAccommodationById(@PathVariable Long id) {
         return accommodationService.getAccommodationById(id);
     }
 
-    @DeleteMapping("{/id}")
+    @DeleteMapping("/{id}")
     @PreAuthorize("hasRole('ADMIN') || hasRole('OWNER')")
     @ResponseStatus(HttpStatus.OK)
     @Operation(summary = "delete accommodation", description = "Delete accommodation by id")
@@ -63,7 +63,7 @@ public class AccommController {
         accommodationService.deleteAccommodationById(id);
     }
 
-    @PatchMapping("{/id}")
+    @PatchMapping("/{id}")
     @PreAuthorize("hasRole('ADMIN') || hasRole('OWNER')")
     @ResponseStatus(HttpStatus.OK)
     @Operation(summary = "update accommodation", description = "Update accommodation by id")

@@ -9,5 +9,5 @@ import org.mapstruct.ReportingPolicy;
 @Mapper(config = MapperConfig.class,
         unmappedTargetPolicy = ReportingPolicy.IGNORE)
 public interface LocationMapper {
-    public LocationDto toDto(Location location);
+    LocationDto toDto(Location location);
 }
