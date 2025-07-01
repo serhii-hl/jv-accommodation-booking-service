@@ -7,7 +7,8 @@ import app.model.Accommodation;
 import app.model.AccommodationPhoto;
 import app.model.AccommodationUnit;
 import java.util.Collections;
-import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.ReportingPolicy;
@@ -21,16 +22,16 @@ public interface AccommodationMapper {
             expression = "java(mapUnitsAvailability(accommodation.getUnits()))")
     AccommodationDto toDto(Accommodation accommodation);
 
-    default List<String> mapPhotoUrls(List<AccommodationPhoto> photos) {
+    default Set<String> mapPhotoUrls(Set<AccommodationPhoto> photos) {
         if (photos == null) {
-            return Collections.emptyList();
+            return Collections.emptySet();
         }
         return photos.stream()
                 .map(AccommodationPhoto::getUrl)
-                .toList();
+                .collect(Collectors.toSet());
     }
 
-    default Integer mapUnitsAvailability(List<AccommodationUnit> units) {
+    default Integer mapUnitsAvailability(Set<AccommodationUnit> units) {
         if (units == null) {
             return 0;
         }

@@ -15,11 +15,12 @@ import app.service.AccommodationService;
 import app.service.AccommodationUnitService;
 import app.service.LocationService;
 import jakarta.persistence.EntityNotFoundException;
-import java.util.List;
+import java.util.Set;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -30,6 +31,7 @@ public class AccommodationServiceImpl implements AccommodationService {
     private final AccommodationUnitService unitService;
     private final AccommodationPhotoService accommodationPhotoService;
 
+    @Transactional(readOnly = true)
     @Override
     public Page<AccommodationDto> getAllAccommodations(Pageable pageable) {
         return accommodationRepository.findAll(pageable)
@@ -86,12 +88,12 @@ public class AccommodationServiceImpl implements AccommodationService {
         Location location = locationService.createLocation(createAccommodationDto.getLocation());
         accommodation.setLocation(location);
         location.setAccommodation(accommodation);
-        List<AccommodationPhoto> photos = accommodationPhotoService.createPhotosForAccommodation(
+        Set<AccommodationPhoto> photos = accommodationPhotoService.createPhotosForAccommodation(
                 createAccommodationDto.getInitialPhotoUrls(),
                 accommodation
         );
         accommodation.setPhotos(photos);
-        List<AccommodationUnit> units = unitService.createUnitsForAccommodation(
+        Set<AccommodationUnit> units = unitService.createUnitsForAccommodation(
                 createAccommodationDto.getUnits(),
                 accommodation
         );

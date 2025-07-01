@@ -1,6 +1,6 @@
 databaseChangeLog:
   - changeSet:
-      id: create-payments-table
+      id: create-payments-table-new-structure
       author: serhiiHolenkov
       changes:
         - createTable:
@@ -30,12 +30,22 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: session_id
-                  type: bigint
+                  type: varchar(255)
                   constraints:
                     nullable: false
               - column:
                   name: price
-                  type: Decimal(9, 2)
+                  type: decimal(9, 2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: currency
+                  type: varchar(3)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: booking_date
+                  type: datetime
                   constraints:
                     nullable: false
               - column:

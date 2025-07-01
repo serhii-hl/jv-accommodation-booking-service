@@ -9,16 +9,14 @@ import app.model.Accommodation;
 import app.model.AccommodationUnit;
 import app.model.Amenity;
 import app.model.Location;
-import java.util.ArrayList;
 import java.util.LinkedHashSet;
-import java.util.List;
 import java.util.Set;
 import javax.annotation.processing.Generated;
 import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-06-26T11:50:31+0300",
+    date = "2025-07-01T12:15:25+0300",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 17.0.12 (Oracle Corporation)"
 )
 @Component
@@ -82,9 +80,9 @@ public class AccommodationMapperImpl implements AccommodationMapper {
         if ( dto.getDailyPrice() != null ) {
             accommodation.setDailyPrice( dto.getDailyPrice() );
         }
-        List<AccommodationUnit> list = createAccommodationUnitDtoListToAccommodationUnitList( dto.getUnits() );
-        if ( list != null ) {
-            accommodation.setUnits( list );
+        Set<AccommodationUnit> set1 = createAccommodationUnitDtoSetToAccommodationUnitSet( dto.getUnits() );
+        if ( set1 != null ) {
+            accommodation.setUnits( set1 );
         }
 
         return accommodation;
@@ -151,16 +149,16 @@ public class AccommodationMapperImpl implements AccommodationMapper {
         return accommodationUnit;
     }
 
-    protected List<AccommodationUnit> createAccommodationUnitDtoListToAccommodationUnitList(List<CreateAccommodationUnitDto> list) {
-        if ( list == null ) {
+    protected Set<AccommodationUnit> createAccommodationUnitDtoSetToAccommodationUnitSet(Set<CreateAccommodationUnitDto> set) {
+        if ( set == null ) {
             return null;
         }
 
-        List<AccommodationUnit> list1 = new ArrayList<AccommodationUnit>( list.size() );
-        for ( CreateAccommodationUnitDto createAccommodationUnitDto : list ) {
-            list1.add( createAccommodationUnitDtoToAccommodationUnit( createAccommodationUnitDto ) );
+        Set<AccommodationUnit> set1 = new LinkedHashSet<AccommodationUnit>( Math.max( (int) ( set.size() / .75f ) + 1, 16 ) );
+        for ( CreateAccommodationUnitDto createAccommodationUnitDto : set ) {
+            set1.add( createAccommodationUnitDtoToAccommodationUnit( createAccommodationUnitDto ) );
         }
 
-        return list1;
+        return set1;
     }
 }

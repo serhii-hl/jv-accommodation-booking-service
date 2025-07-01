@@ -9,7 +9,6 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.Size;
 import java.math.BigDecimal;
-import java.util.List;
 import java.util.Set;
 import lombok.Getter;
 import lombok.Setter;
@@ -28,9 +27,9 @@ public class CreateAccommodationDto {
     @NotNull(message = "Daily price cannot be null")
     @Positive(message = "Daily price must be positive")
     private BigDecimal dailyPrice;
-    private List<String> initialPhotoUrls;
+    private Set<String> initialPhotoUrls;
     @Valid
     @NotNull(message = "Units list cannot be null")
     @Size(min = 1, message = "Accommodation must have at least one unit")
-    private List<CreateAccommodationUnitDto> units;
+    private Set<CreateAccommodationUnitDto> units;
 }

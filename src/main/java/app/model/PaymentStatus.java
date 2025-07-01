@@ -2,5 +2,8 @@ package app.model;
 
 public enum PaymentStatus {
     PENDING,
-    PAID
+    PAID,
+    FAILED,
+    REFUNDED,
+    CANCELLED
 }

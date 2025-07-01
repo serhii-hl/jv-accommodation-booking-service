@@ -15,3 +15,5 @@ databaseChangeLog:
       file: db/changelog/changes/07-create-payments-table.yaml
   - include:
       file: db/changelog/changes/08-add-accommodation-photos-table.yaml
+  - include:
+      file: db/changelog/changes/09-add-total-price-and-fix-payment-columns.yaml

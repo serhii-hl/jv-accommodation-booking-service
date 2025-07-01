@@ -3,9 +3,9 @@ package app.service;
 import app.dto.accommodation.CreateAccommodationUnitDto;
 import app.model.Accommodation;
 import app.model.AccommodationUnit;
-import java.util.List;
+import java.util.Set;
 
 public interface AccommodationUnitService {
-    List<AccommodationUnit> createUnitsForAccommodation(
-            List<CreateAccommodationUnitDto> unitDtos, Accommodation accommodation);
+    Set<AccommodationUnit> createUnitsForAccommodation(
+            Set<CreateAccommodationUnitDto> unitDtos, Accommodation accommodation);
 }

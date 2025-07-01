@@ -5,8 +5,8 @@ import app.mapper.AccommodationUnitMapper;
 import app.model.Accommodation;
 import app.model.AccommodationUnit;
 import app.service.AccommodationUnitService;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -16,9 +16,9 @@ public class AccommodationUnitServiceImpl implements AccommodationUnitService {
     private final AccommodationUnitMapper accommodationUnitMapper;
 
     @Override
-    public List<AccommodationUnit> createUnitsForAccommodation(
-            List<CreateAccommodationUnitDto> unitDtos, Accommodation accommodation) {
-        List<AccommodationUnit> units = new ArrayList<>();
+    public Set<AccommodationUnit> createUnitsForAccommodation(
+            Set<CreateAccommodationUnitDto> unitDtos, Accommodation accommodation) {
+        Set<AccommodationUnit> units = new HashSet<>();
         if (unitDtos != null && !unitDtos.isEmpty()) {
             for (CreateAccommodationUnitDto unitDto : unitDtos) {
                 AccommodationUnit unit = new AccommodationUnit();

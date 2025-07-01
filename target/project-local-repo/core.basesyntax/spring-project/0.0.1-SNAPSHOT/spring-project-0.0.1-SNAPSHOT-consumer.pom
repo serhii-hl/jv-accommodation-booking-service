@@ -7527,6 +7527,12 @@
       <scope>test</scope>
     </dependency>
     <dependency>
+      <groupId>com.stripe</groupId>
+      <artifactId>stripe-java</artifactId>
+      <version>24.10.0</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
       <groupId>commons-beanutils</groupId>
       <artifactId>commons-beanutils</artifactId>
       <version>1.9.4</version>
