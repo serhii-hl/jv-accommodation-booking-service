@@ -7538,5 +7538,11 @@
       <version>1.9.4</version>
       <scope>compile</scope>
     </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-thymeleaf</artifactId>
+      <version>3.2.5</version>
+      <scope>compile</scope>
+    </dependency>
   </dependencies>
 </project>

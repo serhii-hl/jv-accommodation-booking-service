@@ -80,6 +80,7 @@ app\validation\user\Name.class
 app\service\AccommodationUnitService.class
 app\specification\BookingSpecification.class
 app\dto\accommodation\AccommodationDto.class
+app\controller\web\StripePageController.class
 app\service\impl\AccommodationUnitServiceImpl.class
 app\validation\user\NewPasswordValidator.class
 app\repository\AccommodationUnitRepository.class

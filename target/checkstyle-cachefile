@@ -1,4 +1,4 @@
-#Tue Jul 01 12:54:53 EEST 2025
+#Tue Jul 01 15:23:38 EEST 2025
 C\:\\Users\\Serhio\\IdeaProjects\\jv-accommodation-booking-service\\src\\main\\java\\app\\dto\\user\\UserDto.java=1750598708159
 C\:\\Users\\Serhio\\IdeaProjects\\jv-accommodation-booking-service\\src\\main\\java\\app\\dto\\payment\\CreatePaymentDto.java=1751011395519
 C\:\\Users\\Serhio\\IdeaProjects\\jv-accommodation-booking-service\\src\\main\\java\\app\\mapper\\BookingMapper.java=1751173051616
@@ -10,7 +10,7 @@ C\:\\Users\\Serhio\\IdeaProjects\\jv-accommodation-booking-service\\src\\main\\r
 C\:\\Users\\Serhio\\IdeaProjects\\jv-accommodation-booking-service\\src\\main\\java\\app\\mapper\\UserMapper.java=1750910571016
 C\:\\Users\\Serhio\\IdeaProjects\\jv-accommodation-booking-service\\src\\main\\java\\app\\validation\\user\\CheckInAndOutDateValidator.java=1750927566206
 C\:\\Users\\Serhio\\IdeaProjects\\jv-accommodation-booking-service\\src\\main\\java\\app\\model\\Location.java=1750499648523
-C\:\\Users\\Serhio\\IdeaProjects\\jv-accommodation-booking-service\\src\\main\\java\\app\\config\\SecurityConfig.java=1751360739576
+C\:\\Users\\Serhio\\IdeaProjects\\jv-accommodation-booking-service\\src\\main\\java\\app\\config\\SecurityConfig.java=1751372603423
 C\:\\Users\\Serhio\\IdeaProjects\\jv-accommodation-booking-service\\src\\main\\java\\app\\dto\\location\\LocationDto.java=1750652919785
 C\:\\Users\\Serhio\\IdeaProjects\\jv-accommodation-booking-service\\src\\main\\java\\app\\model\\BookingStatus.java=1750484483529
 C\:\\Users\\Serhio\\IdeaProjects\\jv-accommodation-booking-service\\src\\main\\java\\app\\service\\AccommodationUnitService.java=1751172042355
@@ -27,7 +27,7 @@ C\:\\Users\\Serhio\\IdeaProjects\\jv-accommodation-booking-service\\src\\main\\j
 C\:\\Users\\Serhio\\IdeaProjects\\jv-accommodation-booking-service\\src\\main\\java\\app\\dto\\accommodation\\CreateAccommodationUnitDto.java=1750684811838
 C\:\\Users\\Serhio\\IdeaProjects\\jv-accommodation-booking-service\\src\\main\\java\\app\\model\\User.java=1750577802307
 C\:\\Users\\Serhio\\IdeaProjects\\jv-accommodation-booking-service\\src\\main\\java\\app\\mapper\\AccommodationMapper.java=1751172042361
-C\:\\Users\\Serhio\\IdeaProjects\\jv-accommodation-booking-service\\src\\main\\resources\\application.properties=1751363541371
+C\:\\Users\\Serhio\\IdeaProjects\\jv-accommodation-booking-service\\src\\main\\resources\\application.properties=1751372268733
 C\:\\Users\\Serhio\\IdeaProjects\\jv-accommodation-booking-service\\src\\main\\java\\app\\dto\\user\\UserLoginResponseDto.java=1750595371972
 C\:\\Users\\Serhio\\IdeaProjects\\jv-accommodation-booking-service\\src\\main\\java\\app\\service\\impl\\AccommodationServiceImpl.java=1751172329995
 C\:\\Users\\Serhio\\IdeaProjects\\jv-accommodation-booking-service\\src\\main\\java\\app\\security\\AuthenticationService.java=1750595371938
@@ -57,9 +57,10 @@ C\:\\Users\\Serhio\\IdeaProjects\\jv-accommodation-booking-service\\src\\main\\j
 C\:\\Users\\Serhio\\IdeaProjects\\jv-accommodation-booking-service\\src\\main\\java\\app\\dto\\user\\ProfileDto.java=1750595628630
 C\:\\Users\\Serhio\\IdeaProjects\\jv-accommodation-booking-service\\src\\main\\java\\app\\service\\impl\\StripeServiceImpl.java=1751000591858
 C\:\\Users\\Serhio\\IdeaProjects\\jv-accommodation-booking-service\\src\\main\\java\\app\\service\\impl\\BookingServiceImpl.java=1751174691717
-C\:\\Users\\Serhio\\IdeaProjects\\jv-accommodation-booking-service\\src\\main\\java\\app\\service\\impl\\PaymentServiceImpl.java=1751174691725
+C\:\\Users\\Serhio\\IdeaProjects\\jv-accommodation-booking-service\\src\\main\\java\\app\\service\\impl\\PaymentServiceImpl.java=1751366057160
 C\:\\Users\\Serhio\\IdeaProjects\\jv-accommodation-booking-service\\src\\main\\java\\app\\model\\Payment.java=1751011395558
 C\:\\Users\\Serhio\\IdeaProjects\\jv-accommodation-booking-service\\src\\main\\java\\app\\service\\impl\\UserServiceImpl.java=1750650950549
+C\:\\Users\\Serhio\\IdeaProjects\\jv-accommodation-booking-service\\src\\main\\java\\app\\controller\\web\\StripePageController.java=1751371897907
 C\:\\Users\\Serhio\\IdeaProjects\\jv-accommodation-booking-service\\src\\main\\java\\app\\dto\\payment\\PaymentDto.java=1751175360364
 C\:\\Users\\Serhio\\IdeaProjects\\jv-accommodation-booking-service\\src\\main\\java\\app\\service\\UserService.java=1750650950556
 C\:\\Users\\Serhio\\IdeaProjects\\jv-accommodation-booking-service\\src\\main\\java\\app\\validation\\user\\NewPassword.java=1750650778471
@@ -93,6 +94,6 @@ C\:\\Users\\Serhio\\IdeaProjects\\jv-accommodation-booking-service\\src\\main\\j
 C\:\\Users\\Serhio\\IdeaProjects\\jv-accommodation-booking-service\\src\\main\\java\\app\\controller\\AuthController.java=1750598488476
 C\:\\Users\\Serhio\\IdeaProjects\\jv-accommodation-booking-service\\src\\main\\java\\app\\validation\\user\\PhoneValidator.java=1750597981706
 C\:\\Users\\Serhio\\IdeaProjects\\jv-accommodation-booking-service\\src\\main\\java\\app\\dto\\user\\CreateUserRequestDto.java=1750595371923
-C\:\\Users\\Serhio\\IdeaProjects\\jv-accommodation-booking-service\\src\\main\\java\\app\\controller\\PaymentController.java=1751095313560
+C\:\\Users\\Serhio\\IdeaProjects\\jv-accommodation-booking-service\\src\\main\\java\\app\\controller\\PaymentController.java=1751371296333
 C\:\\Users\\Serhio\\IdeaProjects\\jv-accommodation-booking-service\\src\\main\\java\\app\\mapper\\LocationMapper.java=1750910571000
 C\:\\Users\\Serhio\\IdeaProjects\\jv-accommodation-booking-service\\src\\main\\java\\app\\dto\\accommodation\\UpdateAccommodationDto.java=1750747355510

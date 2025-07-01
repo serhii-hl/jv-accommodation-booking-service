@@ -70,6 +70,7 @@ C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\
 C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\controller\StripeWebhookController.java
 C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\dto\user\CreateUserRequestDto.java
 C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\repository\AccommodationPhotoRepository.java
+C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\controller\web\StripePageController.java
 C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\service\AccommodationPhotoService.java
 C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\repository\UserRepository.java
 C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\service\impl\BookingServiceImpl.java
