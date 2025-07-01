@@ -12,6 +12,7 @@ import app.model.Role;
 import app.model.User;
 import app.repository.BookingRepository;
 import app.repository.PaymentRepository;
+import app.service.BookingService;
 import app.service.PaymentService;
 import app.service.StripeService;
 import jakarta.persistence.EntityNotFoundException;
@@ -32,6 +33,7 @@ public class PaymentServiceImpl implements PaymentService {
     private final PaymentRepository paymentRepository;
     private final PaymentMapper paymentMapper;
     private final BookingRepository bookingRepository;
+    private final BookingService bookingService;
     private final StripeService stripeService;
 
     @Value("${stripe.success.url}")
@@ -96,6 +98,10 @@ public class PaymentServiceImpl implements PaymentService {
                 .orElseThrow(() -> new EntityNotFoundException(
                         "Payment not found for session ID: " + sessionId));
         payment.setPaymentStatus(status);
+        if (status == PaymentStatus.PAID) {
+            Long bookingId = payment.getBooking().getId();
+            bookingService.updateBookingStatus(bookingId, BookingStatus.CONFIRMED);
+        }
         paymentRepository.save(payment);
     }
 }
