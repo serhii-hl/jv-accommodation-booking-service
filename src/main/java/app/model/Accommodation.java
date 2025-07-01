@@ -17,11 +17,11 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
 import java.util.Set;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.BatchSize;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.SQLRestriction;
 
@@ -39,7 +39,8 @@ public class Accommodation {
     @Column(nullable = false)
     private AccommodationType type;
     @OneToMany(mappedBy = "accommodation", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<AccommodationPhoto> photos = new ArrayList<>();
+    @BatchSize(size = 25)
+    private Set<AccommodationPhoto> photos = new HashSet<>();
     @OneToOne(mappedBy = "accommodation", cascade = CascadeType.ALL, orphanRemoval = true)
     private Location location;
     @Enumerated(EnumType.STRING)
@@ -50,12 +51,14 @@ public class Accommodation {
     @CollectionTable(name = "accommodation_amenities",
             joinColumns = @JoinColumn(name = "accommodation_id"))
     @Column(name = "amenity")
+    @BatchSize(size = 25)
     private Set<Amenity> amenitySet;
     @Column(nullable = false)
     private BigDecimal dailyPrice;
     @Column(nullable = false)
     @OneToMany(mappedBy = "accommodation", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<AccommodationUnit> units;
+    @BatchSize(size = 25)
+    private Set<AccommodationUnit> units = new HashSet<>();
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "owner_id", nullable = false)
     private User owner;

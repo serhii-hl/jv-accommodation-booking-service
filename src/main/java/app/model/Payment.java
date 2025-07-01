@@ -11,6 +11,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.SQLDelete;
@@ -35,9 +36,12 @@ public class Payment {
     @Column(nullable = false)
     private String sessionUrl;
     @Column(nullable = false)
-    private long sessionId;
+    private String sessionId;
     @Column(nullable = false)
     private BigDecimal price;
+    @Column(nullable = false, length = 3)
+    private String currency;
     @Column(nullable = false)
+    private LocalDateTime bookingDate;
     private boolean isDeleted = false;
 }

@@ -1,0 +1,26 @@
+databaseChangeLog:
+  - changeSet:
+      id: add-total-price-to-bookings-table
+      author: serhiiHolenkov
+      changes:
+        - addColumn:
+            tableName: bookings
+            columns:
+              - column:
+                  name: total_price
+                  type: decimal(19, 2)
+                  defaultValueNumeric: 0.00
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: alter-payments-session-columns-length
+      author: serhiiHolenkov
+      changes:
+        - modifyDataType:
+            tableName: payments
+            columnName: session_id
+            newDataType: varchar(512)
+        - modifyDataType:
+            tableName: payments
+            columnName: session_url
+            newDataType: varchar(2048)

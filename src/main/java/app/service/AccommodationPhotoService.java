@@ -2,9 +2,9 @@ package app.service;
 
 import app.model.Accommodation;
 import app.model.AccommodationPhoto;
-import java.util.List;
+import java.util.Set;
 
 public interface AccommodationPhotoService {
-    List<AccommodationPhoto> createPhotosForAccommodation(
-            List<String> photoUrls, Accommodation accommodation);
+    Set<AccommodationPhoto> createPhotosForAccommodation(
+            Set<String> photoUrls, Accommodation accommodation);
 }

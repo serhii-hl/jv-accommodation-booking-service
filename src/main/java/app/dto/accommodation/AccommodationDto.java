@@ -5,7 +5,6 @@ import app.model.AccommodationSize;
 import app.model.AccommodationType;
 import app.model.Amenity;
 import java.math.BigDecimal;
-import java.util.List;
 import java.util.Set;
 import lombok.Getter;
 import lombok.Setter;
@@ -19,6 +18,6 @@ public class AccommodationDto {
     private AccommodationSize size;
     private Set<Amenity> amenitySet;
     private BigDecimal dailyPrice;
-    private List<String> photoUrls;
+    private Set<String> photoUrls;
     private Integer availableUnitsCount;
 }

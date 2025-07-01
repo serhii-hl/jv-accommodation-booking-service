@@ -16,7 +16,9 @@ import app.service.AccommodationService;
 import app.service.BookingService;
 import app.specification.BookingSpecification;
 import jakarta.persistence.EntityNotFoundException;
+import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -106,6 +108,9 @@ public class BookingServiceImpl implements BookingService {
         booking.setUnit(unit);
         booking.setUser(user);
         booking.setStatus(BookingStatus.PENDING);
+        BigDecimal totalPrice = priceCalculator(createBookingDto.getCheckInDate(),
+                createBookingDto.getCheckOutDate(), accommodation.getDailyPrice());
+        booking.setTotalPrice(totalPrice);
         return bookingMapper.toDto(bookingRepository.save(booking));
     }
 
@@ -121,5 +126,15 @@ public class BookingServiceImpl implements BookingService {
                     "Booking is not available in these days, "
                             + "please choose another date or accommodation");
         }
+    }
+
+    private BigDecimal priceCalculator(LocalDate checkIn, LocalDate checkOut,
+                                       BigDecimal dayPrice) {
+        long numberOfDays = ChronoUnit.DAYS
+                .between(checkIn, checkOut);
+        if (numberOfDays <= 0) {
+            throw new IllegalArgumentException("Booking has no days");
+        }
+        return dayPrice.multiply(new BigDecimal(numberOfDays));
     }
 }

@@ -1,6 +1,7 @@
 package app.dto.booking;
 
 import app.model.BookingStatus;
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import lombok.Getter;
 import lombok.Setter;
@@ -14,4 +15,5 @@ public class BookingDto {
     private Long accommodationId;
     private Long unitId;
     private BookingStatus status;
+    private BigDecimal totalPrice;
 }

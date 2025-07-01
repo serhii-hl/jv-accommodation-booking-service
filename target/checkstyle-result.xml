@@ -12,6 +12,10 @@
 </file>
 <file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\controller\BookingController.java">
 </file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\controller\PaymentController.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\controller\StripeWebhookController.java">
+</file>
 <file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\controller\UserController.java">
 </file>
 <file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\dto\accommodation\AccommodationDto.java">
@@ -27,6 +31,12 @@
 <file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\dto\booking\CreateBookingDto.java">
 </file>
 <file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\dto\location\LocationDto.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\dto\payment\CreatePaymentDto.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\dto\payment\PaymentDto.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\dto\stripe\StripeSessionResponse.java">
 </file>
 <file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\dto\user\CreateUserOwnerRequestDto.java">
 </file>
@@ -59,6 +69,8 @@
 <file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\mapper\BookingMapper.java">
 </file>
 <file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\mapper\LocationMapper.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\mapper\PaymentMapper.java">
 </file>
 <file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\mapper\UserMapper.java">
 </file>
@@ -128,9 +140,17 @@
 </file>
 <file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\service\impl\LocationServiceImpl.java">
 </file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\service\impl\PaymentServiceImpl.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\service\impl\StripeServiceImpl.java">
+</file>
 <file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\service\impl\UserServiceImpl.java">
 </file>
 <file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\service\LocationService.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\service\PaymentService.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\service\StripeService.java">
 </file>
 <file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\service\UserService.java">
 </file>
@@ -169,5 +189,7 @@
 <file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\validation\user\PhoneValidator.java">
 </file>
 <file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\resources\application.properties">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\resources\secret-keys.properties">
 </file>
 </checkstyle>

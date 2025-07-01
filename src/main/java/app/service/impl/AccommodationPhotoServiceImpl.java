@@ -3,8 +3,8 @@ package app.service.impl;
 import app.model.Accommodation;
 import app.model.AccommodationPhoto;
 import app.service.AccommodationPhotoService;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -13,9 +13,9 @@ import org.springframework.stereotype.Service;
 public class AccommodationPhotoServiceImpl implements AccommodationPhotoService {
 
     @Override
-    public List<AccommodationPhoto> createPhotosForAccommodation(List<String> photoUrls,
+    public Set<AccommodationPhoto> createPhotosForAccommodation(Set<String> photoUrls,
                                                                  Accommodation accommodation) {
-        List<AccommodationPhoto> photos = new ArrayList<>();
+        Set<AccommodationPhoto> photos = new HashSet<>();
         if (photoUrls != null && !photoUrls.isEmpty()) {
             for (String url : photoUrls) {
                 AccommodationPhoto photo = new AccommodationPhoto();
