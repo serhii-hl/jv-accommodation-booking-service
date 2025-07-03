@@ -1,0 +1,23 @@
+databaseChangeLog:
+  - changeSet:
+      author: serhiiHolenkov
+      id: add-telegram-info-to-user-table
+      changes:
+        - addColumn:
+            tableName: users
+            columns:
+              - column:
+                  name: telegram_chat_id
+                  type: varchar(255)
+                  constraints:
+                    nullable: true
+                    unique: true
+        - addColumn:
+            tableName: users
+            columns:
+              - column:
+                  name: telegram_user_id
+                  type: varchar(255)
+                  constraints:
+                    nullable: true
+                    unique: true

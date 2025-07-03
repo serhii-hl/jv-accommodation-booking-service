@@ -11,6 +11,7 @@ app\service\AccommodationPhotoService.class
 app\mapper\PaymentMapper.class
 app\validation\user\NewPassword.class
 app\validation\user\PasswordValidator.class
+app\service\TelegramNotificationService.class
 app\AccommodationBookingApp.class
 app\mapper\AccommodationUnitMapper.class
 app\dto\user\UserProfileDto.class
@@ -23,10 +24,12 @@ app\mapper\impl\AccommodationUnitMapperImpl.class
 app\dto\payment\PaymentDto.class
 app\dto\user\UserLoginRequestDto.class
 app\security\CustomUserDetailsService.class
+app\exception\LinkingCompletedException.class
 app\dto\accommodation\UpdateAccommodationDto.class
 app\exception\BookingUnavailableException.class
 app\controller\AccommController.class
 app\mapper\impl\UserMapperImpl.class
+app\exception\InvalidTelegramTokenException.class
 app\dto\accommodation\CreateAccommodationUnitDto.class
 app\service\impl\StripeServiceImpl.class
 app\model\Booking.class
@@ -38,6 +41,7 @@ app\model\PaymentStatus.class
 app\validation\user\CheckInAndOutDateValidator.class
 app\dto\user\UserLoginResponseDto.class
 app\service\AccommodationService.class
+app\service\impl\TelegramNotificationServiceImpl.class
 app\dto\booking\CreateBookingDto.class
 app\model\AccommodationSize.class
 app\dto\accommodation\CreateAccommodationDto.class
@@ -47,6 +51,7 @@ app\validation\user\CheckInAndOutDate.class
 app\mapper\impl\PaymentMapperImpl.class
 app\service\UserService.class
 app\service\BookingService.class
+app\controller\TelegramController.class
 app\validation\user\EmailValidator.class
 app\service\impl\BookingServiceImpl.class
 app\validation\user\Phone.class
@@ -64,9 +69,12 @@ app\service\PaymentService.class
 app\validation\user\NewPhone.class
 app\dto\user\UpdateProfileInformationDto.class
 app\dto\user\CreateUserRequestDto.class
+app\service\TelegramAccountLinkingService.class
 app\dto\user\UserDto.class
+app\model\TelegramLinkingToken.class
 app\model\User.class
 app\repository\BookingRepository.class
+app\service\impl\TelegramBotServiceImpl.class
 app\dto\user\ProfileDto.class
 app\dto\payment\CreatePaymentDto.class
 app\controller\AuthController.class
@@ -84,6 +92,7 @@ app\controller\web\StripePageController.class
 app\service\impl\AccommodationUnitServiceImpl.class
 app\validation\user\NewPasswordValidator.class
 app\repository\AccommodationUnitRepository.class
+app\service\impl\TelegramAccountLinkingServiceImpl.class
 app\service\impl\AccommodationPhotoServiceImpl.class
 app\validation\user\NameValidator.class
 app\model\AccommodationPhoto.class
@@ -91,9 +100,11 @@ app\service\impl\LocationServiceImpl.class
 app\service\impl\UserServiceImpl$1.class
 app\exception\RegistrationException.class
 app\security\JwtAuthenticationFilter.class
+app\repository\TelegramLinkingTokenRepository.class
 app\controller\PaymentController.class
 app\model\Payment.class
 app\config\SecurityConfig.class
+app\service\TelegramBotService.class
 app\dto\booking\BookingDto.class
 app\dto\user\OwnerProfileDto.class
 app\validation\user\Email.class
