@@ -41,6 +41,10 @@ public class User implements UserDetails {
     private Role role;
     @Column(nullable = false)
     private boolean isDeleted = false;
+    @Column(name = "telegram_chat_id", unique = true)
+    private String telegramChatId;
+    @Column(name = "telegram_user_id", unique = true)
+    private String telegramUserId;
     @Column(nullable = true) // optional field, needed only for owners
     private String taxNumber;
     @Column(nullable = true) // optional field, needed only for owners

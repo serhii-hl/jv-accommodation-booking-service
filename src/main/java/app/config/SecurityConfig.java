@@ -45,8 +45,7 @@ public class SecurityConfig {
                                         "/swagger-resources/**",
                                         "/webhook/stripe",
                                         "/payments",
-                                        "/payments/success",
-                                        "/payments/cancel",
+                                        "/payments/**",
                                         "/webjars/**")
                                 .permitAll()
                                 .anyRequest()

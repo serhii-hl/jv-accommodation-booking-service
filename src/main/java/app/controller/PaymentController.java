@@ -4,8 +4,6 @@ import app.dto.payment.CreatePaymentDto;
 import app.dto.payment.PaymentDto;
 import app.model.User;
 import app.service.PaymentService;
-import app.service.StripeService;
-import com.stripe.model.checkout.Session;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
@@ -20,10 +18,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.view.RedirectView;
 
 @Tag(name = "Payment controller",
         description = "Endpoints for payment management ( CRUD operations ) + Stripe")
@@ -32,7 +28,6 @@ import org.springframework.web.servlet.view.RedirectView;
 @RequiredArgsConstructor
 public class PaymentController {
     private final PaymentService paymentService;
-    private final StripeService stripeService;
 
     @GetMapping("/my")
     @Operation(summary = "get all user`s payments", description = "Get all user`s payments")
@@ -53,7 +48,7 @@ public class PaymentController {
     @Operation(summary = "Initiates payment",
             description = "Initiates payment")
     ResponseEntity<PaymentDto> initiatePayment(@RequestBody CreatePaymentDto createPaymentDto,
-                               @AuthenticationPrincipal User user) {
+                                               @AuthenticationPrincipal User user) {
         try {
             PaymentDto paymentDto = paymentService.createPayment(createPaymentDto, user);
             return ResponseEntity.ok(paymentDto);
@@ -66,25 +61,5 @@ public class PaymentController {
         } catch (RuntimeException e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
-    }
-
-    @Operation(summary = "endpoints for successful payment",
-            description = "endpoints for successful payment")
-    @GetMapping("/success")
-    public RedirectView handleStripeSuccess(@RequestParam("session_id") String sessionId) {
-        try {
-            Session session = stripeService.retrieveSession(sessionId);
-            String bookingId = session.getMetadata().get("booking_id");
-            return new RedirectView("http://localhost:8080/payment-success?bookingId=" + bookingId);
-        } catch (Exception e) {
-            return new RedirectView("http://localhost:8080/payment-error");
-        }
-    }
-
-    @Operation(summary = "endpoints for canceled payment",
-            description = "endpoints for canceled payment")
-    @GetMapping("/cancel")
-    public RedirectView handleStripeCancel() {
-        return new RedirectView("http://localhost:8080/payment-cancelled");
     }
 }
