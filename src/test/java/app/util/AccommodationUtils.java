@@ -1,5 +1,7 @@
 package app.util;
 
+import app.dto.accommodation.AccommodationDto;
+import app.dto.location.LocationDto;
 import app.model.Accommodation;
 import app.model.AccommodationPhoto;
 import app.model.AccommodationSize;
@@ -13,6 +15,7 @@ import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class AccommodationUtils {
 
@@ -73,5 +76,48 @@ public class AccommodationUtils {
         accommodation.setPhotos(photos);
 
         return accommodation;
+    }
+
+    public static LocationDto createExpectedLocationDto() {
+        LocationDto locationDto = new LocationDto();
+        locationDto.setCountry("Ukraine");
+        locationDto.setCity("Kyiv");
+        locationDto.setStreet("Shevchenko");
+        locationDto.setNumber("1");
+        return locationDto;
+    }
+
+    public static AccommodationDto createExpectedAccommodationDto() {
+        Accommodation accommodation = createExpectedAccommodation();
+
+        AccommodationDto dto = new AccommodationDto();
+        dto.setId(accommodation.getId());
+        dto.setType(accommodation.getType());
+        dto.setLocation(createExpectedLocationDto());
+        dto.setSize(accommodation.getSize());
+        dto.setAmenitySet(accommodation.getAmenitySet());
+        dto.setDailyPrice(accommodation.getDailyPrice());
+
+        Set<String> photoUrls = accommodation.getPhotos().stream()
+                .map(AccommodationPhoto::getUrl)
+                .collect(Collectors.toSet());
+        dto.setPhotoUrls(photoUrls);
+
+        long availableUnits = accommodation.getUnits().stream()
+                .filter(AccommodationUnit::isActive)
+                .count();
+        dto.setAvailableUnitsCount((int) availableUnits);
+
+        return dto;
+    }
+
+    public static Location createExpectedLocation() {
+        Location location = new Location();
+        location.setCountry("Ukraine");
+        location.setCity("Kyiv");
+        location.setStreet("Shevchenko");
+        location.setNumber("1");
+        location.setDeleted(false);
+        return location;
     }
 }

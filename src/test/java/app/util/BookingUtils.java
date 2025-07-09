@@ -1,5 +1,6 @@
 package app.util;
 
+import app.dto.booking.BookingDto;
 import app.model.Accommodation;
 import app.model.AccommodationPhoto;
 import app.model.AccommodationSize;
@@ -9,7 +10,6 @@ import app.model.Amenity;
 import app.model.Booking;
 import app.model.BookingStatus;
 import app.model.Location;
-import app.model.Role;
 import app.model.User;
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -19,22 +19,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class BookingUtils {
-    private static User createExpectedOwner() {
-        User owner = new User();
-        owner.setId(100L);
-        owner.setCompanyName("Test Company");
-        owner.setEmail("owner@example.com");
-        owner.setFirstName("Test");
-        owner.setDeleted(false);
-        owner.setLastName("Owner");
-        owner.setPassword("Password1234!");
-        owner.setPhoneNumber("+1234567890");
-        owner.setRole(Role.OWNER);
-        owner.setTaxNumber("1234567890");
-        owner.setTelegramChatId("123456789");
-        owner.setTelegramUserId("987654321");
-        return owner;
-    }
 
     private static Accommodation createExpectedAccommodationBase(User owner) {
         Accommodation accommodation = new Accommodation();
@@ -87,7 +71,7 @@ public class BookingUtils {
     }
 
     public static Booking createExpectedBooking() {
-        User owner = createExpectedOwner();
+        User owner = UserUtils.createExpectedTestUserOwner();
         Accommodation accommodation = createExpectedAccommodationBase(owner);
         Location location = createExpectedLocation(accommodation);
         accommodation.setLocation(location);
@@ -107,5 +91,24 @@ public class BookingUtils {
         booking.setTotalPrice(new BigDecimal("450.00"));
 
         return booking;
+    }
+
+    public static BookingDto createExpectedBookingDto() {
+        Booking booking = createExpectedBooking();
+
+        BookingDto dto = new BookingDto();
+        dto.setId(booking.getId());
+        dto.setCheckInDate(booking.getCheckInDate());
+        dto.setCheckOutDate(booking.getCheckOutDate());
+        if (booking.getAccommodation() != null) {
+            dto.setAccommodationId(booking.getAccommodation().getId());
+        }
+        if (booking.getUnit() != null) {
+            dto.setUnitId(booking.getUnit().getId());
+        }
+        dto.setStatus(booking.getStatus());
+        dto.setTotalPrice(booking.getTotalPrice());
+
+        return dto;
     }
 }

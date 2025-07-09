@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="app.repository.PaymentRepositoryTests" time="0.148" tests="2" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="app.service.AccommodationServiceTests" time="0.757" tests="9" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -62,16 +62,13 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="findAllPaymentsByUserId" classname="app.repository.PaymentRepositoryTests" time="0.058">
-    <system-out><![CDATA[2025-07-09T10:39:33.223+03:00  INFO 8960 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [app.repository.PaymentRepositoryTests]: PaymentRepositoryTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2025-07-09T10:39:33.255+03:00  INFO 8960 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration app.AccommodationBookingApp for test class app.repository.PaymentRepositoryTests
-Hibernate: select p1_0.id,p1_0.booking_id,p1_0.booking_date,p1_0.currency,p1_0.is_deleted,p1_0.payment_status,p1_0.price,p1_0.session_id,p1_0.session_url from payments p1_0 join bookings b1_0 on b1_0.id=p1_0.booking_id and (b1_0.is_deleted = false) where (p1_0.is_deleted = false) and b1_0.user_id=? and p1_0.is_deleted=false offset ? rows fetch first ? rows only
-Hibernate: select b1_0.id,b1_0.accommodation_id,b1_0.check_in_date,b1_0.check_out_date,b1_0.is_deleted,b1_0.status,b1_0.total_price,b1_0.unit_id,b1_0.user_id from bookings b1_0 where b1_0.id=? and (b1_0.is_deleted = false)
-]]></system-out>
-  </testcase>
-  <testcase name="findBySessionId" classname="app.repository.PaymentRepositoryTests" time="0.046">
-    <system-out><![CDATA[Hibernate: select p1_0.id,p1_0.booking_id,p1_0.booking_date,p1_0.currency,p1_0.is_deleted,p1_0.payment_status,p1_0.price,p1_0.session_id,p1_0.session_url from payments p1_0 where (p1_0.is_deleted = false) and p1_0.session_id=?
-Hibernate: select b1_0.id,b1_0.accommodation_id,b1_0.check_in_date,b1_0.check_out_date,b1_0.is_deleted,b1_0.status,b1_0.total_price,b1_0.unit_id,b1_0.user_id from bookings b1_0 where b1_0.id=? and (b1_0.is_deleted = false)
-]]></system-out>
-  </testcase>
+  <testcase name="getOwnerIdForAccommodationSuccess" classname="app.service.AccommodationServiceTests" time="0.625"/>
+  <testcase name="updateAccommodationNotFound" classname="app.service.AccommodationServiceTests" time="0.02"/>
+  <testcase name="deleteAccommodationByIdNotFound" classname="app.service.AccommodationServiceTests" time="0.01"/>
+  <testcase name="getAccommodationByIdSuccess" classname="app.service.AccommodationServiceTests" time="0.012"/>
+  <testcase name="deleteAccommodationByIdSuccess" classname="app.service.AccommodationServiceTests" time="0.008"/>
+  <testcase name="getAllAccommodationSuccess" classname="app.service.AccommodationServiceTests" time="0.02"/>
+  <testcase name="getOwnerIdForAccommodationNotFound" classname="app.service.AccommodationServiceTests" time="0.006"/>
+  <testcase name="createAccommodationSuccess" classname="app.service.AccommodationServiceTests" time="0.024"/>
+  <testcase name="updateAccommodationSuccess" classname="app.service.AccommodationServiceTests" time="0.009"/>
 </testsuite>

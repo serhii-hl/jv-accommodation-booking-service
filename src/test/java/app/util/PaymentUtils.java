@@ -1,5 +1,6 @@
 package app.util;
 
+import app.dto.payment.PaymentDto;
 import app.model.Payment;
 import app.model.PaymentStatus;
 import java.math.BigDecimal;
@@ -18,5 +19,20 @@ public class PaymentUtils {
         payment.setBookingDate(LocalDateTime.of(2025,7, 5, 0, 0));
         payment.setDeleted(false);
         return payment;
+    }
+
+    public static PaymentDto createExpectedPaymentDto() {
+        Payment payment = createExpectedPayment();
+        PaymentDto dto = new PaymentDto();
+        dto.setId(payment.getId());
+        dto.setPaymentStatus(payment.getPaymentStatus());
+        if (payment.getBooking() != null) {
+            dto.setBookingId(payment.getBooking().getId());
+        }
+        dto.setPrice(payment.getPrice());
+        dto.setCurrency(payment.getCurrency());
+        dto.setSessionUrl(payment.getSessionUrl());
+        dto.setSessionId(payment.getSessionId());
+        return dto;
     }
 }
