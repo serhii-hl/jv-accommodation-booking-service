@@ -18,7 +18,7 @@ import org.hibernate.annotations.SQLRestriction;
 @Getter
 @Setter
 @EqualsAndHashCode(of = "id")
-@SQLDelete(sql = "UPDATE locations SET is_deleted = true WHERE id=?")
+@SQLDelete(sql = "UPDATE locations SET is_deleted = true WHERE accommodation_id=?")
 @SQLRestriction("is_deleted = false")
 public class Location {
     @Id

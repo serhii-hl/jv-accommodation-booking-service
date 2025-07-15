@@ -1,7 +1,12 @@
 package app.util;
 
+import app.dto.user.CreateUserOwnerRequestDto;
 import app.dto.user.CreateUserRequestDto;
+import app.dto.user.UpdateProfileInformationDto;
+import app.dto.user.UpdateRoleRequestDto;
 import app.dto.user.UserDto;
+import app.dto.user.UserLoginRequestDto;
+import app.dto.user.UserLoginResponseDto;
 import app.model.Role;
 import app.model.User;
 
@@ -62,5 +67,74 @@ public class UserUtils {
         dto.setLastName(owner.getLastName());
         dto.setPhoneNumber(owner.getPhoneNumber());
         return dto;
+    }
+
+    public static CreateUserRequestDto createCreateUserRequestDto(
+            String email, String firstName, String lastName,
+            String password, String confirmPassword) {
+        CreateUserRequestDto dto = new CreateUserRequestDto();
+        dto.setEmail(email);
+        dto.setFirstName(firstName);
+        dto.setLastName(lastName);
+        dto.setPassword(password);
+        dto.setConfirmPassword(confirmPassword);
+        return dto;
+    }
+
+    public static CreateUserOwnerRequestDto createCreateUserOwnerRequestDto(
+            String email, String firstName, String lastName,
+            String password, String confirmPassword,
+            String phoneNumber, String taxNumber, String companyName) {
+        CreateUserOwnerRequestDto dto = new CreateUserOwnerRequestDto();
+        dto.setEmail(email);
+        dto.setFirstName(firstName);
+        dto.setLastName(lastName);
+        dto.setPassword(password);
+        dto.setConfirmPassword(confirmPassword);
+        dto.setPhoneNumber(phoneNumber);
+        dto.setTaxNumber(taxNumber);
+        dto.setCompanyName(companyName);
+        return dto;
+    }
+
+    public static UserDto createUserDto(
+            Long id, String email, String firstName, String lastName, String phoneNumber) {
+        UserDto dto = new UserDto();
+        dto.setId(id);
+        dto.setEmail(email);
+        dto.setFirstName(firstName);
+        dto.setLastName(lastName);
+        dto.setPhoneNumber(phoneNumber);
+        return dto;
+    }
+
+    public static UserLoginRequestDto createUserLoginRequestDto(String email, String password) {
+        UserLoginRequestDto dto = new UserLoginRequestDto();
+        dto.setEmail(email);
+        dto.setPassword(password);
+        return dto;
+    }
+
+    public static UserLoginResponseDto createUserLoginResponseDto(String jwtToken) {
+        UserLoginResponseDto dto = new UserLoginResponseDto();
+        dto.setJwtToken(jwtToken);
+        return dto;
+    }
+
+    public static UpdateRoleRequestDto createUpdateRoleRequestDto(Role role, boolean isDeleted) {
+        UpdateRoleRequestDto dto = new UpdateRoleRequestDto();
+        dto.setRole(role);
+        dto.setDeleted(isDeleted);
+        return dto;
+    }
+
+    public static UpdateProfileInformationDto createUpdateProfileInformationDto(
+            String password, String firstName, String lastName, String phoneNumber) {
+        UpdateProfileInformationDto updateProfileInformationDto = new UpdateProfileInformationDto();
+        updateProfileInformationDto.setPassword(password);
+        updateProfileInformationDto.setFirstName(firstName);
+        updateProfileInformationDto.setLastName(lastName);
+        updateProfileInformationDto.setPhoneNumber(phoneNumber);
+        return updateProfileInformationDto;
     }
 }

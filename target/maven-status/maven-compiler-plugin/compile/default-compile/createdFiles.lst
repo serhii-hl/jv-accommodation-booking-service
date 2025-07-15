@@ -33,6 +33,7 @@ app\exception\InvalidTelegramTokenException.class
 app\dto\accommodation\CreateAccommodationUnitDto.class
 app\service\impl\StripeServiceImpl.class
 app\model\Booking.class
+app\exception\CustomGlobalExceptionHandler.class
 app\dto\location\LocationDto.class
 app\mapper\BookingMapper.class
 app\mapper\impl\AccommodationMapperImpl.class

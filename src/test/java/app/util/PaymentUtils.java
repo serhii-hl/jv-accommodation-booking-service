@@ -1,5 +1,6 @@
 package app.util;
 
+import app.dto.payment.CreatePaymentDto;
 import app.dto.payment.PaymentDto;
 import app.model.Payment;
 import app.model.PaymentStatus;
@@ -33,6 +34,12 @@ public class PaymentUtils {
         dto.setCurrency(payment.getCurrency());
         dto.setSessionUrl(payment.getSessionUrl());
         dto.setSessionId(payment.getSessionId());
+        return dto;
+    }
+
+    public static CreatePaymentDto createCreatePaymentDtoToSend() {
+        CreatePaymentDto dto = new CreatePaymentDto();
+        dto.setBookingId(100L);
         return dto;
     }
 }

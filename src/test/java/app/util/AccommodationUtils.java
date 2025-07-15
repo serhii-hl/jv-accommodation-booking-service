@@ -1,6 +1,9 @@
 package app.util;
 
 import app.dto.accommodation.AccommodationDto;
+import app.dto.accommodation.CreateAccommodationDto;
+import app.dto.accommodation.CreateAccommodationUnitDto;
+import app.dto.accommodation.UpdateAccommodationDto;
 import app.dto.location.LocationDto;
 import app.model.Accommodation;
 import app.model.AccommodationPhoto;
@@ -119,5 +122,58 @@ public class AccommodationUtils {
         location.setNumber("1");
         location.setDeleted(false);
         return location;
+    }
+
+    public static CreateAccommodationDto createExpectedCreateAccommodationDto() {
+        CreateAccommodationDto dto = new CreateAccommodationDto();
+
+        dto.setType(AccommodationType.APARTMENT);
+        dto.setSize(AccommodationSize.ONE_BEDROOM);
+        dto.setDailyPrice(new BigDecimal("75.50"));
+
+        LocationDto locationDto = new LocationDto();
+        locationDto.setCountry("Ukraine");
+        locationDto.setCity("Kyiv");
+        locationDto.setStreet("Shevchenko");
+        locationDto.setNumber("1");
+        dto.setLocation(locationDto);
+
+        Set<Amenity> amenities = new HashSet<>(Arrays.asList(
+                Amenity.WIFI,
+                Amenity.KITCHEN,
+                Amenity.PARKING
+        ));
+        dto.setAmenitySet(amenities);
+
+        Set<String> photoUrls = new HashSet<>();
+        photoUrls.add("http://example.com/apartment_photo1.jpg");
+        dto.setInitialPhotoUrls(photoUrls);
+
+        CreateAccommodationUnitDto unitDto = new CreateAccommodationUnitDto();
+        unitDto.setUnitNumber("101");
+        unitDto.setActive(true);
+
+        Set<CreateAccommodationUnitDto> units = new HashSet<>();
+        units.add(unitDto);
+        dto.setUnits(units);
+
+        return dto;
+    }
+
+    public static UpdateAccommodationDto createExpectedUpdateAccommodationDto() {
+        UpdateAccommodationDto dto = new UpdateAccommodationDto();
+        dto.setType(AccommodationType.APARTMENT);
+        dto.setSize(AccommodationSize.ONE_BEDROOM);
+        dto.setDailyPrice(new BigDecimal("75.50"));
+        dto.setLocation(createExpectedLocationDto());
+
+        Set<Amenity> amenities = new HashSet<>(Arrays.asList(
+                Amenity.WIFI,
+                Amenity.KITCHEN,
+                Amenity.PARKING
+        ));
+        dto.setAmenitySet(amenities);
+
+        return dto;
     }
 }

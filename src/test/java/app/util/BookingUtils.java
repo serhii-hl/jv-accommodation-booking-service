@@ -1,6 +1,7 @@
 package app.util;
 
 import app.dto.booking.BookingDto;
+import app.dto.booking.CreateBookingDto;
 import app.model.Accommodation;
 import app.model.AccommodationPhoto;
 import app.model.AccommodationSize;
@@ -109,6 +110,15 @@ public class BookingUtils {
         dto.setStatus(booking.getStatus());
         dto.setTotalPrice(booking.getTotalPrice());
 
+        return dto;
+    }
+
+    public static CreateBookingDto createBookingDtoToSend() {
+        CreateBookingDto dto = new CreateBookingDto();
+        dto.setCheckInDate(LocalDate.of(2025, 8, 1));
+        dto.setCheckOutDate(LocalDate.of(2025, 8, 7));
+        dto.setAccommodationId(100L);
+        dto.setUnitId(100L);
         return dto;
     }
 }

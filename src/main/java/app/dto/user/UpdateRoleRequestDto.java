@@ -1,7 +1,6 @@
 package app.dto.user;
 
 import app.model.Role;
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
@@ -11,6 +10,6 @@ import lombok.Setter;
 public class UpdateRoleRequestDto {
     @NotNull
     private boolean isDeleted;
-    @NotBlank
+    @NotNull
     private Role role;
 }

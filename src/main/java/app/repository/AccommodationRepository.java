@@ -15,9 +15,19 @@ public interface AccommodationRepository extends JpaRepository<Accommodation, Lo
     @Query("SELECT a.owner.id FROM Accommodation a WHERE a.id = :accommodationId")
     Long getOwnerIdByAccommodationId(@Param("accommodationId") Long accommodationId);
 
-    @Query("SELECT a FROM Accommodation a WHERE a.id = :id AND a.isDeleted = false")
+    @Query("SELECT a FROM Accommodation a "
+            + "LEFT JOIN FETCH a.amenitySet "
+            + "LEFT JOIN FETCH a.photos "
+            + "LEFT JOIN FETCH a.units "
+            + "LEFT JOIN FETCH a.location l "
+            + "WHERE a.id = :id AND a.isDeleted = false")
     Optional<Accommodation> findById(@Param("id") Long id);
 
-    @Query("SELECT a FROM Accommodation a WHERE a.isDeleted = false")
+    @Query("SELECT a FROM Accommodation a "
+            + "LEFT JOIN FETCH a.amenitySet "
+            + "LEFT JOIN FETCH a.photos "
+            + "LEFT JOIN FETCH a.units "
+            + "LEFT JOIN FETCH a.location l "
+            + "WHERE a.isDeleted = false")
     Page<Accommodation> findAll(Pageable pageable);
 }

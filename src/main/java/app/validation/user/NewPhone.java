@@ -12,7 +12,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface NewPhone {
     String message() default
-            "Invalid email. Please use the correct one";
+            "Invalid phone number. Please use the correct one";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
 }

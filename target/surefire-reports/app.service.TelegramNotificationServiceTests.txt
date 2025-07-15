@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: app.service.TelegramNotificationServiceTests
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.059 s -- in app.service.TelegramNotificationServiceTests
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s -- in app.service.TelegramNotificationServiceTests

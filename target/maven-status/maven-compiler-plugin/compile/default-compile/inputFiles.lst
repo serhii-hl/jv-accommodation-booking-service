@@ -50,6 +50,7 @@ C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\
 C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\validation\user\EmailValidator.java
 C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\dto\user\UserLoginResponseDto.java
 C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\exception\LinkingCompletedException.java
+C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\exception\CustomGlobalExceptionHandler.java
 C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\dto\accommodation\CreateAccommodationUnitDto.java
 C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\dto\user\ProfileDto.java
 C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\model\Role.java
