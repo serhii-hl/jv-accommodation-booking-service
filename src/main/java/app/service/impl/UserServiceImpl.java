@@ -53,10 +53,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public ProfileDto getCurrentUser(User user) {
+        if (user.getRole() == null) {
+            throw new IllegalStateException("User role must not be null");
+        }
         return switch (user.getRole()) {
             case USER -> userMapper.toUserProfileDto(user);
             case OWNER, ADMIN -> userMapper.toOwnerProfileDto(user);
-            default -> throw new IllegalStateException("Unexpected value: " + user.getRole());
         };
     }
 

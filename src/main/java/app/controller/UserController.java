@@ -4,7 +4,6 @@ import app.dto.user.ProfileDto;
 import app.dto.user.UpdateProfileInformationDto;
 import app.dto.user.UpdateRoleRequestDto;
 import app.dto.user.UserDto;
-import app.mapper.UserMapper;
 import app.model.User;
 import app.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -29,7 +28,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class UserController {
     private final UserService userService;
-    private final UserMapper userMapper;
 
     @GetMapping("/me")
     @Operation(summary = "Get current user", description = "Get current user")

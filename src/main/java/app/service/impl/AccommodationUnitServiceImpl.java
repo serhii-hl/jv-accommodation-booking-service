@@ -1,7 +1,6 @@
 package app.service.impl;
 
 import app.dto.accommodation.CreateAccommodationUnitDto;
-import app.mapper.AccommodationUnitMapper;
 import app.model.Accommodation;
 import app.model.AccommodationUnit;
 import app.service.AccommodationUnitService;
@@ -13,7 +12,6 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class AccommodationUnitServiceImpl implements AccommodationUnitService {
-    private final AccommodationUnitMapper accommodationUnitMapper;
 
     @Override
     public Set<AccommodationUnit> createUnitsForAccommodation(

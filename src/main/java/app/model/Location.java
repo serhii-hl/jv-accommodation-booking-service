@@ -7,6 +7,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.MapsId;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.SQLDelete;
@@ -16,7 +17,8 @@ import org.hibernate.annotations.SQLRestriction;
 @Table(name = "locations")
 @Getter
 @Setter
-@SQLDelete(sql = "UPDATE locations SET is_deleted = true WHERE id=?")
+@EqualsAndHashCode(of = "id")
+@SQLDelete(sql = "UPDATE locations SET is_deleted = true WHERE accommodation_id=?")
 @SQLRestriction("is_deleted = false")
 public class Location {
     @Id

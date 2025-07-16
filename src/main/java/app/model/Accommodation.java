@@ -19,6 +19,7 @@ import jakarta.persistence.Table;
 import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.Set;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.BatchSize;
@@ -29,6 +30,7 @@ import org.hibernate.annotations.SQLRestriction;
 @Table(name = "accommodations")
 @Getter
 @Setter
+@EqualsAndHashCode(of = "id")
 @SQLDelete(sql = "UPDATE accommodations SET is_deleted = true WHERE id=?")
 @SQLRestriction("is_deleted = false")
 public class Accommodation {

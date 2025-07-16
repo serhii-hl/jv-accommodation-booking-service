@@ -12,6 +12,7 @@ import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.SQLDelete;
@@ -20,6 +21,7 @@ import org.hibernate.annotations.SQLRestriction;
 @Entity
 @Getter
 @Setter
+@EqualsAndHashCode(of = "id")
 @Table(name = "payments")
 @SQLDelete(sql = "UPDATE payments SET is_deleted = true WHERE id=?")
 @SQLRestriction("is_deleted = false")

@@ -64,6 +64,8 @@
 </file>
 <file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\exception\BookingUnavailableException.java">
 </file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\exception\CustomGlobalExceptionHandler.java">
+</file>
 <file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\exception\InvalidTelegramTokenException.java">
 </file>
 <file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\exception\LinkingCompletedException.java">
@@ -212,8 +214,68 @@
 </file>
 <file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\java\app\validation\user\PhoneValidator.java">
 </file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\test\java\app\AccommodationBookingAppTests.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\test\java\app\controller\AccommControllerTests.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\test\java\app\controller\AuthControllerTests.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\test\java\app\controller\BookingControllerTests.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\test\java\app\controller\PaymentControllerTests.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\test\java\app\controller\StripePageControllerTest.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\test\java\app\controller\StripeWebhookControllerTest.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\test\java\app\controller\TelegramControllerTests.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\test\java\app\controller\UserControllerTests.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\test\java\app\repository\AccommodationRepositoryTests.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\test\java\app\repository\BookingRepositoryTests.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\test\java\app\repository\PaymentRepositoryTests.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\test\java\app\repository\TelegramLinkingTokenRepositoryTests.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\test\java\app\repository\UserRepositoryTests.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\test\java\app\service\AccommodationPhotoServiceTests.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\test\java\app\service\AccommodationServiceTests.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\test\java\app\service\AccommodationUnitServiceTests.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\test\java\app\service\BookingServiceTests.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\test\java\app\service\LocationServiceTests.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\test\java\app\service\PaymentServiceTests.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\test\java\app\service\StripeServiceTests.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\test\java\app\service\TelegramAccountLinkingServiceTests.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\test\java\app\service\TelegramNotificationServiceTests.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\test\java\app\service\UserServiceTests.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\test\java\app\util\AccommodationUtils.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\test\java\app\util\BookingUtils.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\test\java\app\util\PaymentUtils.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\test\java\app\util\TelegramLinkingTokenUtils.java">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\test\java\app\util\UserUtils.java">
+</file>
 <file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\resources\application.properties">
 </file>
 <file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\main\resources\secret-keys.properties">
+</file>
+<file name="C:\Users\Serhio\IdeaProjects\jv-accommodation-booking-service\src\test\resources\application.properties">
 </file>
 </checkstyle>

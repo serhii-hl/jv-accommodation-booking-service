@@ -13,6 +13,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.SQLDelete;
@@ -22,6 +23,7 @@ import org.hibernate.annotations.SQLRestriction;
 @Table(name = "bookings")
 @Getter
 @Setter
+@EqualsAndHashCode(of = "id")
 @SQLDelete(sql = "UPDATE bookings SET is_deleted = true WHERE id=?")
 @SQLRestriction("is_deleted = false")
 public class Booking {
