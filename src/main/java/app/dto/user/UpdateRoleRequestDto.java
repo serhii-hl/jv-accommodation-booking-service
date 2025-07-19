@@ -8,7 +8,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class UpdateRoleRequestDto {
-    @NotNull
     private boolean isDeleted;
     @NotNull
     private Role role;

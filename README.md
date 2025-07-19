@@ -90,11 +90,24 @@ This project uses the following tools to maintain clean and consistent code:
 
 https://www.loom.com/share/fa146f55dac84344ba83a3b201c6ac5c?sid=c96a8a40-647a-4515-bdf6-28d8a6065a31
 
+## Postman collection:
+
+https://.postman.co/workspace/My-Workspace~1aaecfe4-bf1e-4ea4-82e2-d2c99d18913d/collection/44947335-f8c610ec-d538-4546-8c68-1756c17fc7ca?action=share&creator=44947335
+
+## Swagger link:
+
+http://localhost:8080/swagger-ui/index.html
+
 ## Setup
 
-1. Download my project to your PC
-2. Make sure Docker is installed
-3. Before running the application, create a `.env` file in the root directory
-   by copying the provided `.env.template`
-4. Also, you will need to create a secret-keys.properties based on the secret-keys-properties-template file
-5. Test all endpoints on Postman :)
+# First, ensure you have the following installed:
+- Java Development Kit (JDK)
+- Docker and Docker Compose 
+- Ngrok.exe (for public endpoints where you redirected after payment)
+# Clone the repository (https://github.com/serhii-hl/jv-accommodation-booking-service)
+# Create an .env file with the necessary environment variables. (See .env-template and secret-keys-properties for a sample.)
+# Repackage the project with mvn clean package command
+# Run the following commands to build and start the Docker containers:
+- docker-compose build 
+- docker-compose up.
+# The application should now be running at http://localhost:8080

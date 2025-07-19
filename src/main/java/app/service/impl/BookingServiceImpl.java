@@ -39,7 +39,8 @@ public class BookingServiceImpl implements BookingService {
     @Override
     public BookingDto getBookingById(Long id) {
         return bookingMapper.toDto(bookingRepository.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException("Booking not found")));
+                .orElseThrow(() -> new EntityNotFoundException("Booking with id: "
+                        + id + " not found.")));
     }
 
     @Override
@@ -136,9 +137,10 @@ public class BookingServiceImpl implements BookingService {
                 unit.getId(), checkIn, checkOut, blockingStatuses
         );
         if (isOverlapping) {
-            throw new BookingUnavailableException(
-                    "Booking is not available in these days, "
-                            + "please choose another date or accommodation");
+            throw new BookingUnavailableException(String.format(
+                    "Booking unavailable for unit id: %d in date range %s to %s. "
+                            + "Please choose another date or accommodation.",
+                    unit.getId(), checkIn, checkOut));
         }
     }
 
@@ -147,7 +149,8 @@ public class BookingServiceImpl implements BookingService {
         long numberOfDays = ChronoUnit.DAYS
                 .between(checkIn, checkOut);
         if (numberOfDays <= 0) {
-            throw new IllegalArgumentException("Booking has no days");
+            throw new IllegalArgumentException(String.format(
+                    "Invalid booking date range: check-in %s, check-out %s", checkIn, checkOut));
         }
         return dayPrice.multiply(new BigDecimal(numberOfDays));
     }

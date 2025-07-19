@@ -15,7 +15,7 @@ public class TelegramNotificationServiceImpl implements TelegramNotificationServ
         try {
             telegramBotService.sendMessage(Long.valueOf(chatId), message);
         } catch (Exception e) {
-            throw new RuntimeException("Cannot send notification ", e);
+            throw new RuntimeException("Cannot send notification to chat: " + chatId, e);
         }
     }
 }

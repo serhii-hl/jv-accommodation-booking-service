@@ -89,7 +89,7 @@ public class BookingServiceTests {
                 "Expected deleteAccommodationById to throw EntityNotFoundException, "
                         + "but it didn't"
         );
-        assertThat(thrown.getMessage()).isEqualTo("Booking not found");
+        assertThat(thrown.getMessage()).isEqualTo("Booking with id: 99 not found.");
     }
 
     @Test
@@ -439,8 +439,9 @@ public class BookingServiceTests {
                 () -> bookingService.createBooking(createBookingDto, user),
                 "Expected BookingUnavailableException when unit is not available"
         );
-        assertThat(thrown.getMessage()).isEqualTo("Booking is not "
-                + "available in these days, please choose another date or accommodation");
+        assertThat(thrown.getMessage()).isEqualTo("Booking unavailable for unit "
+                + "id: 100 in date range 2025-09-01 to 2025-09-07. "
+                + "Please choose another date or accommodation.");
 
         verify(accommodationRepository, times(1))
                 .findById(createBookingDto.getAccommodationId());
@@ -508,7 +509,8 @@ public class BookingServiceTests {
                 () -> bookingService.createBooking(createBookingDto, user),
                 "Expected IllegalArgumentException for invalid dates"
         );
-        assertThat(thrown.getMessage()).isEqualTo("Booking has no days");
+        assertThat(thrown.getMessage()).isEqualTo("Invalid booking date range: "
+                + "check-in 2025-09-07, check-out 2025-09-07");
 
         verify(accommodationRepository, times(1))
                 .findById(createBookingDto.getAccommodationId());
