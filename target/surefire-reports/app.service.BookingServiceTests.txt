@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: app.service.BookingServiceTests
 -------------------------------------------------------------------------------
-Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.430 s -- in app.service.BookingServiceTests
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.449 s -- in app.service.BookingServiceTests

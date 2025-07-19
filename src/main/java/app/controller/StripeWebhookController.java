@@ -44,7 +44,6 @@ public class StripeWebhookController {
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Could not parse event");
         }
-        System.out.println("Received Stripe event: " + event.getType() + ", ID: " + event.getId());
 
         switch (event.getType()) {
             case "checkout.session.completed":

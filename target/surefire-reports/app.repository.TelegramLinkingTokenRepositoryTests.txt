@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: app.repository.TelegramLinkingTokenRepositoryTests
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.151 s -- in app.repository.TelegramLinkingTokenRepositoryTests
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.135 s -- in app.repository.TelegramLinkingTokenRepositoryTests
