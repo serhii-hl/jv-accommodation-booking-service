@@ -47,11 +47,11 @@ public class User implements UserDetails {
     private String telegramChatId;
     @Column(name = "telegram_user_id", unique = true)
     private String telegramUserId;
-    @Column(nullable = true) // optional field, needed only for owners
+    @Column(nullable = true)
     private String taxNumber;
-    @Column(nullable = true) // optional field, needed only for owners
+    @Column(nullable = true)
     private String companyName;
-    @Column(nullable = true) // optional field, needed only for owners
+    @Column(nullable = true)
     private String phoneNumber;
 
     @Override
