@@ -92,7 +92,7 @@ https://www.loom.com/share/fa146f55dac84344ba83a3b201c6ac5c?sid=c96a8a40-647a-45
 
 ## Postman collection:
 
-https://.postman.co/workspace/My-Workspace~1aaecfe4-bf1e-4ea4-82e2-d2c99d18913d/collection/44947335-f8c610ec-d538-4546-8c68-1756c17fc7ca?action=share&creator=44947335
+https://postman.co/workspace/My-Workspace~1aaecfe4-bf1e-4ea4-82e2-d2c99d18913d/collection/44947335-f8c610ec-d538-4546-8c68-1756c17fc7ca?action=share&creator=44947335
 
 ## Swagger link:
 
