@@ -100,14 +100,14 @@ http://localhost:8080/swagger-ui/index.html
 
 ## Setup
 
-# First, ensure you have the following installed:
-- Java Development Kit (JDK)
-- Docker and Docker Compose 
-- Ngrok.exe (for public endpoints where you redirected after payment)
-# Clone the repository (https://github.com/serhii-hl/jv-accommodation-booking-service)
-# Create an .env file with the necessary environment variables. (See .env-template and secret-keys-properties for a sample.)
-# Repackage the project with mvn clean package command
-# Run the following commands to build and start the Docker containers:
-- docker-compose build 
-- docker-compose up.
-# The application should now be running at http://localhost:8080
+1. Ensure you have the following installed:
+   - Java Development Kit (JDK)
+   - Docker and Docker Compose 
+   - Ngrok.exe (for public endpoints where you redirected after payment)
+2. Clone the repository (https://github.com/serhii-hl/jv-accommodation-booking-service)
+3. Create an .env file with the necessary environment variables. (See .env-template and secret-keys-properties for a sample.)
+4. Repackage the project with mvn clean package command
+5. Run the following commands to build and start the Docker containers:
+   - docker-compose build 
+   - docker-compose up.
+6. The application should now be running at http://localhost:8080
